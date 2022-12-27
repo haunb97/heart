@@ -37,7 +37,7 @@ const controls = new THREE.TrackballControls(camera, renderer.domElement);
 controls.noPan = true;
 controls.noRotate = true;
 controls.maxDistance = 0.7;
-controls.minDistance = -3;
+controls.minDistance = -2.5;
 
 // object
 const group = new THREE.Group();

@@ -2,7 +2,7 @@ body {
   position: relative;
   background: #000;
   overflow: hidden;
-  margin: 0;
+  margin: auto;
 }
 
 canvas {
