@@ -22,7 +22,8 @@ renderer.setClearColor(new THREE.Color("rgb(0,0,0)"));
 // Resizes the input canvas to (width, height) taking into account the device pixel ratio
 // and resizes the viewport to fit starting at (0, 0)
 if (window?.innerWidth < 400) {
-  renderer.setSize(320, 700);
+  // renderer.setSize(320, 700);
+  renderer.setSize(window?.innerWidth, window?.innerHeight);
 } else {
   renderer.setSize(window?.innerWidth, window?.innerHeight);
 }
@@ -34,8 +35,9 @@ camera.position.z = 1.8;
 // trackball controller
 const controls = new THREE.TrackballControls(camera, renderer.domElement);
 controls.noPan = true;
-controls.maxDistance = 3;
-controls.minDistance = 0.7;
+controls.noRotate = true;
+controls.maxDistance = 0.7;
+controls.minDistance = -3;
 
 // object
 const group = new THREE.Group();
@@ -229,8 +231,6 @@ function render(a) {
 }
 
 setInterval(() => {
-  console.log("🔥 - setInterval - setInterval", setInterval);
-  // sampler = new THREE.MeshSurfaceSampler(heart).build();
   renderer.render(scene, camera);
 }, 20);
 
