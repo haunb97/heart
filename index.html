@@ -3,36 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lu bé Yến💘</title>
+    <title>rice</title>
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./index.css" />
     <style>
       /* html {
         transform: scale(0.8);
       } */
     </style>
   </head>
-  <body onclick="playAudio()">
-    <script src="js/three.min.js"></script>
-    <script src="js/MeshSurfaceSampler.js"></script>
-    <script src="js/TrackballControls.js"></script>
-    <script src="js/simplex-noise.js"></script>
-    <script src="js/OBJLoader.js"></script>
-    <script src="js/gsap.min.js"></script>
-    <script src="js/script.js"></script>
-    <img
-      class="img"
-      src="assets/images/295687036_1186755995207413_6973288155579043557_n.jpg"
-      alt=""
-    />
-    <audio id="myAudio" loop>
-      <source src="assets/musics/Falling You.mp3" type="audio/ogg" />
-    </audio>
-    <script>
-      const soundEffect = new Audio("assets/musics/Falling You.mp3");
-      function playAudio() {
-        soundEffect.play();
-      }
-    </script>
+  <body>
+    <script src="./index.js"></script>
+    <div class="root" style="display: flex">
+      <input id="price" type="text" name="price" value="30000" />
+      <button onclick="handleAdd()">Click me</button>
+    </div>
+    <div id="content"></div>
+    <div id="total"></div>
   </body>
 </html>

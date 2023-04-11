@@ -1,0 +1,22 @@
+.root {
+  background-image: src(
+    "./assets/images/295687036_1186755995207413_6973288155579043557_n.jpg"
+  );
+}
+
+#content {
+  margin-top: 20px;
+}
+
+#total {
+  margin-top: 10px;
+  padding-top: 20px;
+  border-top: 2px solid #000;
+}
+
+.content__chill {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
