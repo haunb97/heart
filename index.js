@@ -35,8 +35,14 @@ const handleRemove = (index) => {
   handleRenderContent();
 };
 
+const handleRemoveAllOrder = () => {
+  setLocal({});
+}
+
 const handleCalculateOrder = () => {
   const totalElement = document.getElementById("total");
+  totalElement.style.display = "flex";
+  totalElement.style.justifyContent = "space-between";
   let ordered = getAllValues(getLocal());
   let total = 0;
   ordered.forEach((item) => {
@@ -47,6 +53,17 @@ const handleCalculateOrder = () => {
     style: "currency",
     currency: "VND",
   })}`;
+  // Remove all order
+  let chillButton = document.createElement("button");
+  chillButton.innerText = "Remove all";
+  chillButton.onclick = () => {
+      const isConfirm = confirm("Are you sure?");
+      if (isConfirm) {
+        handleRemoveAllOrder();
+        handleRenderContent();
+      }
+    }
+  totalElement.appendChild(chillButton);
 };
 
 const handleRenderContent = () => {
@@ -62,7 +79,12 @@ const handleRenderContent = () => {
     chillContent.innerText = item;
     let chillButton = document.createElement("button");
     chillButton.innerText = "Remove";
-    chillButton.onclick = () => handleRemove(index);
+    chillButton.onclick = () => {
+      const isConfirm = confirm("Are you sure?");
+      if (isConfirm) {
+        handleRemove(index);
+      }
+    };
     parentChill.appendChild(chillContent);
     parentChill.appendChild(chillButton);
     newChill.appendChild(parentChill);
@@ -70,7 +92,6 @@ const handleRenderContent = () => {
   try {
     oldContent.replaceChild(newChill, oldChill);
   } catch (error) {
-    console.log("🔥 - handleRenderContent - error:", error);
     oldContent.appendChild(newChill);
   } finally {
     handleCalculateOrder();
@@ -84,7 +105,6 @@ const handleAdd = () => {
   ordered = { ...ordered, [ordered.length + 1]: `${price}--${currentTime}` };
   setLocal(ordered);
   handleRenderContent();
-  handleCalculateOrder();
 };
 
 // first render
