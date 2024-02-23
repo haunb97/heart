@@ -3,31 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lu bé Yến💘</title>
+    <title>Dành cho em💘</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="css/style.css" />
-    <style>
-      /* html {
-        transform: scale(0.8);
-      } */
-    </style>
   </head>
   <body onclick="playAudio()">
-    <script src="js/three.min.js"></script>
-    <script src="js/MeshSurfaceSampler.js"></script>
-    <script src="js/TrackballControls.js"></script>
-    <script src="js/simplex-noise.js"></script>
-    <script src="js/OBJLoader.js"></script>
-    <script src="js/gsap.min.js"></script>
-    <script src="js/script.js"></script>
-    <img
-      class="img"
-      src="assets/images/295687036_1186755995207413_6973288155579043557_n.jpg"
-      alt=""
-    />
+    <div class="header-text">
+      <h1 class="text-shadow">--Dành cho em !!! --</h1>
+      <div class="tags">
+        <p class="text-shadow">
+          <small>#luemnhieulamdo #maibenanhnheem</small>
+        </p>
+      </div>
+    </div>
+    <div>
+      <script src="js/three.min.js"></script>
+      <script src="js/MeshSurfaceSampler.js"></script>
+      <script src="js/TrackballControls.js"></script>
+      <script src="js/simplex-noise.js"></script>
+      <script src="js/OBJLoader.js"></script>
+      <script src="js/gsap.min.js"></script>
+      <script src="js/script.js"></script>
+    </div>
+    <div class="layout-2">
+      <img
+        class="img"
+        src="https://i.pinimg.com/736x/63/e1/01/63e1018dc70ddf72516d46aa9876543c.jpg"
+        alt=""
+      />
+    </div>
+    <div class="layout-3">
+      <div id="word">Gửi tới cô bé anh thương 💘</div>
+    </div>
     <audio id="myAudio" loop>
       <source src="assets/musics/Falling You.mp3" type="audio/ogg" />
     </audio>
+    <script src="js/text.js"></script>
     <script>
       const soundEffect = new Audio("assets/musics/Falling You.mp3");
       function playAudio() {
