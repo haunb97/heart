@@ -19,13 +19,18 @@ var words = [
   forwards = true,
   skip_count = 0,
   skip_delay = 15,
-  speed = 80;
+  speed = 80,
+  isShowSaleOff = false;
+function playAudio() {
+  soundEffect.play();
+}
 
-var wordflick = function () {
+const wordflick = function () {
+  window.removeEventListener("click", wordflick, false);
+  soundEffect.play();
   setInterval(function () {
     // chữ chạy tiến
     if (forwards) {
-      console.log("🔥 - forwards:", forwards);
       if (offset >= words[i].length) {
         ++skip_count;
         if (skip_count == skip_delay) {
@@ -38,7 +43,15 @@ var wordflick = function () {
         forwards = true;
         i++;
         offset = 0;
+        // chạy lại từ đầu nếu đến cuối array word
         if (i >= len) {
+          // hiển thị sale off text and move down layout-3 một lần duy nhất
+          if (!isShowSaleOff) {
+            isShowSaleOff = true;
+            document.getElementById("sale-off").style.display = "block";
+            document.getElementsByClassName("layout-3")[0].style.bottom = "20%";
+          }
+          // chạy lại từ đầu
           i = 0;
         }
       }
@@ -46,7 +59,6 @@ var wordflick = function () {
     part = words[i].substr(0, offset);
     // chữ chạy ngược
     if (skip_count == 0) {
-      console.log("🔥 - skip_count:", skip_count);
       if (forwards) {
         offset++;
       } else {
@@ -54,8 +66,11 @@ var wordflick = function () {
         // offset--;
       }
     }
+
     document.getElementById("word").innerHTML = part;
   }, speed);
 };
+
+const soundEffect = new Audio("assets/musics/Falling You.mp3");
 
 window.addEventListener("click", wordflick);

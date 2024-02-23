@@ -11,20 +11,21 @@ body {
   margin: auto;
 }
 
+.container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
 // starttext head
 
-.header-text {
+.header-text-love {
   position: absolute;
   top: 0;
   left: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-size: 2em;
   color: #fff;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   text-align: center;
 }
 
@@ -73,9 +74,6 @@ h1 {
   }
 }
 // end text head
-canvas {
-  margin: auto;
-}
 
 #ontop {
   position: absolute;
@@ -88,15 +86,12 @@ canvas {
 }
 
 .layout-2 {
-  background-color: #595956;
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0.5;
   width: 100vw;
   height: 100vh;
-  justify-content: center;
-  align-items: center;
 }
 
 img {
@@ -111,20 +106,38 @@ img {
 
 .layout-3 {
   position: absolute;
-  bottom: 25%;
+  bottom: 23%;
   left: 0;
   width: 100vw;
   display: flex;
+  flex-direction: column;
+  @media (max-width: 768px) {
+    bottom: 24%;
+  }
 }
 
 #word {
   color: #fff;
-  width: 100%;
-  z-index: 99999;
   text-align: center;
   padding: 0 20px;
   font-size: 1.5em;
   @media (max-width: 768px) {
     font-size: 1.2em;
   }
+}
+
+#sale-off {
+  display: none;
+  text-align: center;
+  font-size: 1.5em;
+  padding-top: 0.5em;
+  color: #e97e88;
+  @media (max-width: 768px) {
+    font-size: 1.2em;
+  }
+}
+
+canvas {
+  position: absolute;
+  margin-top: 2%;
 }

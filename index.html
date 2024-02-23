@@ -14,42 +14,36 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body onclick="playAudio()">
-    <div class="header-text">
-      <h1 class="text-shadow">--Dành cho em !!! --</h1>
-      <div class="tags">
-        <p class="text-shadow">
-          <small>#luemnhieulamdo #maibenanhnheem</small>
-        </p>
+    <script src="js/three.min.js"></script>
+    <script src="js/MeshSurfaceSampler.js"></script>
+    <script src="js/TrackballControls.js"></script>
+    <script src="js/simplex-noise.js"></script>
+    <script src="js/OBJLoader.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/script.js"></script>
+    <div class="container">
+      <div class="header-text-love">
+        <h1 class="text-shadow">--Dành cho em !!! --</h1>
+        <div class="tags">
+          <p class="text-shadow">
+            <small>#luemnhieulamdo #maibenanhnheem</small>
+          </p>
+        </div>
+      </div>
+      <div class="layout-2">
+        <img
+          class="img"
+          src="https://i.pinimg.com/736x/63/e1/01/63e1018dc70ddf72516d46aa9876543c.jpg"
+          alt=""
+        />
+      </div>
+      <div class="layout-3">
+        <div id="word">Gửi tới cô bé anh thương 💘</div>
+        <div id="sale-off">
+          Tôi làm gì đã có người yêu tôi đang sợ ế đây này 😭
+        </div>
       </div>
     </div>
-    <div>
-      <script src="js/three.min.js"></script>
-      <script src="js/MeshSurfaceSampler.js"></script>
-      <script src="js/TrackballControls.js"></script>
-      <script src="js/simplex-noise.js"></script>
-      <script src="js/OBJLoader.js"></script>
-      <script src="js/gsap.min.js"></script>
-      <script src="js/script.js"></script>
-    </div>
-    <div class="layout-2">
-      <img
-        class="img"
-        src="https://i.pinimg.com/736x/63/e1/01/63e1018dc70ddf72516d46aa9876543c.jpg"
-        alt=""
-      />
-    </div>
-    <div class="layout-3">
-      <div id="word">Gửi tới cô bé anh thương 💘</div>
-    </div>
-    <audio id="myAudio" loop>
-      <source src="assets/musics/Falling You.mp3" type="audio/ogg" />
-    </audio>
     <script src="js/text.js"></script>
-    <script>
-      const soundEffect = new Audio("assets/musics/Falling You.mp3");
-      function playAudio() {
-        soundEffect.play();
-      }
-    </script>
   </body>
 </html>
